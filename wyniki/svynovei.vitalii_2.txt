@@ -1,0 +1,87 @@
+➜  wyniki git:(develop) git checkout -b PlanLekcji develop
+M	wyniki/svynovei.vitalii1.txt
+Switched to a new branch 'PlanLekcji'
+➜  wyniki git:(PlanLekcji) ✗ touch plan.txt
+➜  wyniki git:(PlanLekcji) ✗ git add .
+➜  wyniki git:(PlanLekcji) ✗ git commit -m "plan lekcji"
+[PlanLekcji f057f89] plan lekcji
+ 2 files changed, 15 insertions(+)
+ create mode 100644 wyniki/plan.txt
+➜  wyniki git:(PlanLekcji) git checkout -b Piotrek
+Switched to a new branch 'Piotrek'
+➜  wyniki git:(Piotrek) git status
+On branch Piotrek
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   plan.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  wyniki git:(Piotrek) ✗ git add .
+➜  wyniki git:(Piotrek) ✗ git checkout -b Bartek PlanLekcji
+M	wyniki/plan.txt
+Switched to a new branch 'Bartek'
+➜  wyniki git:(Bartek) ✗ git add .
+➜  wyniki git:(Bartek) ✗ git branch
+* Bartek
+  Piotrek
+  PlanLekcji
+  develop
+  main
+  master
+➜  wyniki git:(Bartek) ✗ git checkout -b rodzina Bartek
+M	wyniki/plan.txt
+Switched to a new branch 'rodzina'
+➜  wyniki git:(rodzina) ✗ git merge Piotrek
+Already up-to-date.
+➜  wyniki git:(rodzina) ✗ git checkout Bartek
+M	wyniki/plan.txt
+Switched to branch 'Bartek'
+➜  wyniki git:(Bartek) ✗ git status
+On branch Bartek
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   plan.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    plan.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	plan_bartek.txt
+
+➜  wyniki git:(Bartek) ✗ git add .
+➜  wyniki git:(Bartek) ✗ git checkout Piotrek
+D	wyniki/plan.txt
+A	wyniki/plan_bartek.txt
+Switched to branch 'Piotrek'
+➜  wyniki git:(Piotrek) ✗ git status
+On branch Piotrek
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    plan.txt
+	new file:   plan_bartek.txt
+
+➜  wyniki git:(Piotrek) ✗ git mv plan_bartek.txt plan_piotrek
+➜  wyniki git:(Piotrek) ✗ git status
+On branch Piotrek
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    plan.txt
+	new file:   plan_piotrek
+
+➜  wyniki git:(Piotrek) ✗ git add .
+➜  wyniki git:(Piotrek) git log --oneline --graph
+* b447a96 (HEAD -> Piotrek) plany zajęć
+* f057f89 (rodzina, PlanLekcji, Bartek) plan lekcji
+* fe7470c (origin/develop, develop) zadanie1
+* e2dfdaf (main) plan zajęć
+* 5de2a28 (origin/main, master) first commit
