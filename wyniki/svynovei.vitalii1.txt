@@ -1,0 +1,44 @@
+
+➜  kolokwium1s git clone https://github.com/Vitalii82/Kolokwium1c.git
+Cloning into 'Kolokwium1c'...
+warning: You appear to have cloned an empty repository.
+➜  kolokwium1s git config --global user.name Vitalii82
+➜  kolokwium1s git config --global user.mail svinovej90@gmail.com
+➜  kolokwium1s git:(master) git checkout main
+Switched to branch 'main'
+Your branch is up-to-date with 'origin/main'.
+➜  kolokwium1s git:(main) git branch -v
+* main   5de2a28 first commit
+  master 5de2a28 first commit
+➜  kolokwium1s git:(main) touch .gitignore
+➜  kolokwium1s git:(main) ✗ echo "*.pyc" >> .gitignore
+➜  kolokwium1s git:(main) ✗ subl .gitignore
+zsh: command not found: subl
+➜  kolokwium1s git:(main) ✗ git --help
+➜  kolokwium1s git:(main) ✗ touch todo.txt
+➜  kolokwium1s git:(main) ✗ echo  „do zrobienia:” >> todo.txt
+➜  kolokwium1s git:(main) ✗ git add .
+➜  kolokwium1s git:(main) ✗ git commit -m "plan zajęć"
+[main e2dfdaf] plan zajęć
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 todo.txt
+➜  kolokwium1s git:(main) git branch develop
+➜  kolokwium1s git:(main) git checkout develop
+Switched to branch 'develop'
+➜  kolokwium1s git:(develop) git push -u origin develop
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 353 bytes | 353.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/Vitalii82/Kolokwium1c/pull/new/develop
+remote:
+To https://github.com/Vitalii82/Kolokwium1c.git
+ * [new branch]      develop -> develop
+Branch develop set up to track remote branch develop from origin.
+➜  kolokwium1s git:(develop) mkdir wyniki
+➜  kolokwium1s git:(develop) cd wyniki
+➜   wyniki git:(develop) ✗ touch svynovei.vitalii1.txt
